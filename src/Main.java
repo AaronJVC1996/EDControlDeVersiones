@@ -97,7 +97,65 @@ public class Main {
                 System.out.printf("%-25s%-20s%-20d\n", equipo.getNombre(), equipo.getCiudad(), equipo.getNumJugadores());
             }
         }
-
         System.out.println("*********************************************************");
+    }
+    private static void verJugadores(Liga liga) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Indique el equipo que quiere visualizar:");
+
+        String nombreEquipo = scanner.nextLine();
+
+        Equipo equipo = liga.getEquipo(nombreEquipo);
+
+        if (equipo != null) {
+            System.out.println("********* " + equipo.getNombre() + " ****************************");
+            System.out.printf("%-15s%-15s%-10s%-10s%-10s\n", "NOMBRE", "POSICIÓN", "EDAD", "NAC", "LESIONADO");
+
+            for (Jugador jugador : equipo.ListaJugadores) {
+                if (jugador != null) {
+                    System.out.printf("%-15s%-15s%-10d%-10s%-10s\n",
+                            jugador.getNombre(), jugador.getPosicion(), jugador.getEdad(),
+                            jugador.getNacionalidad(), jugador.getLesionado() ? "SI" : "NO");
+                }
+            }
+
+            System.out.println("*********************************************");
+        } else {
+            System.out.println("El equipo indicado no existe.");
+        }
+    }
+    private static void venderJugador(Scanner scanner, Liga liga) {
+        System.out.println("Inserte el nombre del equipo donde quiere vender el jugador:");
+        String nombreEquipo = scanner.nextLine();
+
+        Equipo equipo = liga.getEquipo(nombreEquipo);
+
+        if (equipo != null) {
+            System.out.println("Inserte el nombre del jugador:");
+            String nombreJugador = scanner.nextLine();
+
+            Jugador jugador = buscarJugadorEnEquipo(nombreJugador, equipo);
+
+            if (jugador != null) {
+                equipo.venderJugador(nombreJugador);
+                System.out.println("Jugador vendido.");
+            } else {
+                System.out.println("El jugador no existe.");
+            }
+        } else {
+            System.out.println("El equipo indicado no existe.");
+        }
+    }
+    private static Jugador buscarJugadorEnEquipo(String nombreJugador, Equipo equipo) {
+        for (int i = 0; i < equipo.ListaJugadores.length; i++) {
+            Jugador jugador = equipo.ListaJugadores[i];
+            if (jugador != null && jugador.getNombre().equals(nombreJugador)) {
+                return jugador;
+            }
+        }
+        return null;
+    }
+    private static void salir() {
+        System.out.println("Estas saliendo de esta aplicacion, !!Nos Vemos!!");
     }
 }
