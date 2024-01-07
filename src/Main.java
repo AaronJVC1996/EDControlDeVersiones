@@ -84,10 +84,9 @@ public class Main {
 
             System.out.println("Indique la nacionalidad del jugador:");
             String nacionalidad = scanner.nextLine();
-
             System.out.println("Indique la edad del jugador:");
             int edad = scanner.nextInt();
-            scanner.nextLine();  // Consumir la nueva línea después de la edad
+            scanner.nextLine();
 
             String posicion = null;
             boolean posicionValida = false;
@@ -115,12 +114,9 @@ public class Main {
             System.out.println("El equipo indicado no existe.");
         }
 
-        // Cerrar el scanner al final
-        scanner.close();
     }
 
     private static boolean posicionValida(String posicion) {
-        // Verificar si la posición es una de las cuatro válidas
         return posicion.equalsIgnoreCase("Delantero") ||
                 posicion.equalsIgnoreCase("Centrocampista") ||
                 posicion.equalsIgnoreCase("Defensa") ||
