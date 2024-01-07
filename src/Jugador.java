@@ -27,4 +27,10 @@ public class Jugador {
     public Boolean getLesionado(){
         return Lesionado;
     }
+    public void Lesionarse(){
+        Lesionado = true;
+    }
+    public void Recuperarse(){
+        Lesionado = false;
+    }
 }
