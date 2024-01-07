@@ -7,5 +7,7 @@ public class Equipo {
     public Equipo (String nombr, String ciuda){
         Nombre = nombr;
         Ciudad = ciuda;
+        ListaJugadores = new Jugador[numMaxJugadores];
     }
+
 }
