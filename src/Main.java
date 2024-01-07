@@ -12,6 +12,45 @@ public class Main {
         Liga liga = new Liga(paisLiga);
         System.out.println("Liga en " + liga.getPais());
         System.out.println("Número de equipos: " + liga.getNumEquipos());
+        int opcion;
+        do {
+            System.out.println("MENU DE LA LIGA");
+            System.out.println("1- Insertar Equipo");
+            System.out.println("2- Insertar Jugador");
+            System.out.println("3- Ver equipos de la liga");
+            System.out.println("4- Ver jugadores de un equipo.");
+            System.out.println("5- Vender jugador");
+            System.out.println("6- Salir");
+            System.out.println("Ingrese la opción deseada:");
+
+            opcion = scanner.nextInt();
+            scanner.nextLine();  // Consumir el salto de línea después de nextInt()
+
+            switch (opcion) {
+                case 1:
+                    insertarEquipo(liga);
+                    break;
+                case 2:
+                    insertarJugador(liga);
+                    break;
+                case 3:
+                    verLiga(liga);
+                    break;
+                case 4:
+                    verJugadores(liga);
+                    break;
+                case 5:
+                    venderJugador(liga);
+                    break;
+                case 6:
+                    salir();
+                    break;
+
+                default:
+                    System.out.println("Opción no válida. Inténtelo de nuevo.");
+            }
+
+        } while (opcion != 6);
     }
     private static void insertarEquipo(Liga liga) {
         Scanner scanner = new Scanner(System.in);
@@ -124,7 +163,8 @@ public class Main {
             System.out.println("El equipo indicado no existe.");
         }
     }
-    private static void venderJugador(Scanner scanner, Liga liga) {
+    private static void venderJugador(Liga liga) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Inserte el nombre del equipo donde quiere vender el jugador:");
         String nombreEquipo = scanner.nextLine();
 
