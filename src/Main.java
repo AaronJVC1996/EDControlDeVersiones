@@ -153,7 +153,7 @@ public class Main {
         if (equipo != null) {
             System.out.println("********* " + equipo.getNombre() + " ****************************");
             System.out.printf("%-15s%-15s%-10s%-10s%-10s\n", "NOMBRE", "POSICIÓN", "EDAD", "NAC", "LESIONADO");
-            //recorremos listadejugadores para obt
+            //recorremos listadejugadores para ver si el jugador existe, si existe se iniciara el siguiente codigo.
             for (Jugador jugador : equipo.ListaJugadores) {
                 if (jugador != null) {
                     System.out.printf("%-15s%-15s%-10d%-10s%-10s\n",
@@ -173,24 +173,27 @@ public class Main {
         String nombreEquipo = scanner.nextLine();
 
         Equipo equipo = liga.getEquipo(nombreEquipo);
-
+        //si el equipo existe se iniciara el siguiente codigo
         if (equipo != null) {
             System.out.println("Inserte el nombre del jugador:");
             String nombreJugador = scanner.nextLine();
 
             Jugador jugador = buscarJugadorEnEquipo(nombreJugador, equipo);
-
+            //si el jugador existe se iniciara el siguiente codigo
             if (jugador != null) {
                 equipo.venderJugador(nombreJugador);
                 System.out.println("Jugador vendido.");
             } else {
                 System.out.println("El jugador no existe.");
+                // si el jugador no existe saltara este mensaje
             }
         } else {
             System.out.println("El equipo indicado no existe.");
+            //si el equipo no existe saltara este texto.
         }
     }
     private static Jugador buscarJugadorEnEquipo(String nombreJugador, Equipo equipo) {
+        //este metodo es un bucle para buscar si existe el jugador o no, acompaña al metodo vender jugador.
         for (int i = 0; i < equipo.ListaJugadores.length; i++) {
             Jugador jugador = equipo.ListaJugadores[i];
             if (jugador != null && jugador.getNombre().equals(nombreJugador)) {
@@ -200,6 +203,7 @@ public class Main {
         return null;
     }
     private static void salir() {
+        //este es el metodo para salir del menu y saltara este texto.
         System.out.println("Estas saliendo de esta aplicacion, !!Nos Vemos!!");
     }
 }
