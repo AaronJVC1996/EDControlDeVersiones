@@ -125,10 +125,10 @@ public class Main {
 
     private static boolean posicionValida(String posicion) {
         //es como un enumeration que estamos usando para validar la posicion.
-        return posicion.equalsIgnoreCase("Delantero") ||
-                posicion.equalsIgnoreCase("Centrocampista") ||
-                posicion.equalsIgnoreCase("Defensa") ||
-                posicion.equalsIgnoreCase("Portero");
+        return posicion.equalsIgnoreCase("DEL") ||
+                posicion.equalsIgnoreCase("CTC") ||
+                posicion.equalsIgnoreCase("DEF") ||
+                posicion.equalsIgnoreCase("POR");
     }
     private static void verLiga(Liga liga) {
         System.out.println("**********COMPOSICIÓN DE LA LIGA*************************");
