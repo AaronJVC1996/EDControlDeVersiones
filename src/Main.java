@@ -5,13 +5,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        //comenzaremos creanndo la liga
         System.out.println("Empiece creando una liga:");
         System.out.println("Escriba el país de la liga:");
         String paisLiga = scanner.nextLine();
         Liga liga = new Liga(paisLiga);
         System.out.println("Liga en " + liga.getPais());
         System.out.println("Número de equipos: " + liga.getNumEquipos());
+        //ahora creamos el menu de opciones con un do para que siempre se inicie minimo 1 vez
         int opcion;
         do {
             System.out.println("MENU DE LA LIGA");
@@ -24,8 +25,8 @@ public class Main {
             System.out.println("Ingrese la opción deseada:");
 
             opcion = scanner.nextInt();
-            scanner.nextLine();  // Consumir el salto de línea después de nextInt()
-
+            scanner.nextLine();
+            //creamos los cases con los metodos hechos mas adelante
             switch (opcion) {
                 case 1:
                     insertarEquipo(liga);
@@ -48,6 +49,8 @@ public class Main {
 
                 default:
                     System.out.println("Opción no válida. Inténtelo de nuevo.");
+                    //saltara esto cuando se inicie un numero que no esta entre estos 6
+                    //si tecleamos letras se saldra de el programa
             }
 
         } while (opcion != 6);
@@ -62,7 +65,7 @@ public class Main {
         String ciudadEquipo = scanner.nextLine();
 
         Equipo nuevoEquipo = new Equipo(nombreEquipo, ciudadEquipo);
-
+        //si la liga no esta llena se creara el equipo, de lo contrario saltara un mensaje de que esta lleno.
         if (liga.getNumEquipos() < liga.numMaxEquipos) {
             liga.añadirEquipo(nuevoEquipo);
             System.out.println("Equipo " + nombreEquipo + " insertado.");
@@ -89,21 +92,25 @@ public class Main {
             scanner.nextLine();
 
             String posicion = null;
+            //inicializamos la posicion
             boolean posicionValida = false;
-
+            //la posicion iniciara en false para que pueda entrar el siguiente codigo.
             while (!posicionValida) {
+                //Cuando no hay posicion seleccionada añadiremos una
                 System.out.println("Indique la posición del jugador (Delantero, Centrocampista, Defensa, Portero):");
                 posicion = scanner.nextLine();
 
                 if (posicionValida(posicion)) {
                     posicionValida = true;
+                    //validamos si existe la posicion con el metodo posicionValida()
                 } else {
                     System.out.println("Posición no válida. Inténtelo de nuevo.");
+                    //si no existe la posicion que has escrito saltara este mensaje.
                 }
             }
-
+            //si se ha añadido correctamente los requisitos, se añadira el jugador.
             Jugador nuevoJugador = new Jugador(nombreJugador, nacionalidad, edad, posicion);
-
+            //comprobamos si estan lleno de jugadores el equipo
             if (equipo.getNumJugadores() < equipo.numMaxJugadores) {
                 equipo.adquirirJugador(nuevoJugador);
                 System.out.println("Jugador " + nombreJugador + " insertado en " + nombreEquipo);
@@ -117,6 +124,7 @@ public class Main {
     }
 
     private static boolean posicionValida(String posicion) {
+        //es como un enumeration que estamos usando para validar la posicion.
         return posicion.equalsIgnoreCase("Delantero") ||
                 posicion.equalsIgnoreCase("Centrocampista") ||
                 posicion.equalsIgnoreCase("Defensa") ||
@@ -125,7 +133,7 @@ public class Main {
     private static void verLiga(Liga liga) {
         System.out.println("**********COMPOSICIÓN DE LA LIGA*************************");
         System.out.printf("%-25s%-20s%-20s\n", "EQUIPO", "CIUDAD", "NUMERO JUGADORES");
-
+        //nos devolvera solamente los equipos que esten y no los nulls obviamente.
         for (int i = 0; i < liga.ListadoEquipos.length; i++) {
             Equipo equipo = liga.ListadoEquipos[i];
             if (equipo != null) {
@@ -141,11 +149,11 @@ public class Main {
         String nombreEquipo = scanner.nextLine();
 
         Equipo equipo = liga.getEquipo(nombreEquipo);
-
+        //cuando el equipo existe iniciara el siguiente codigo.
         if (equipo != null) {
             System.out.println("********* " + equipo.getNombre() + " ****************************");
             System.out.printf("%-15s%-15s%-10s%-10s%-10s\n", "NOMBRE", "POSICIÓN", "EDAD", "NAC", "LESIONADO");
-
+            //recorremos listadejugadores para obt
             for (Jugador jugador : equipo.ListaJugadores) {
                 if (jugador != null) {
                     System.out.printf("%-15s%-15s%-10d%-10s%-10s\n",
