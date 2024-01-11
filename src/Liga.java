@@ -44,4 +44,10 @@ public class Liga {
             }
         }
     }
+    public Equipo getListadoEquipos(int posicion) {
+            //he creado este getter para llamarlo facilmente desde el main, ademas es mas facil de entender.
+            return ListadoEquipos[posicion];
+        }
+
+
 }

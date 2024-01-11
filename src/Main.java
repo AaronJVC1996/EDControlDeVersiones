@@ -135,7 +135,7 @@ public class Main {
         System.out.printf("%-25s%-20s%-20s\n", "EQUIPO", "CIUDAD", "NUMERO JUGADORES");
         //nos devolvera solamente los equipos que esten y no los nulls obviamente.
         for (int i = 0; i < liga.getNumEquipos(); i++) {
-            Equipo equipo = liga.ListadoEquipos[i];
+            Equipo equipo = liga.getListadoEquipos(i);
             if (equipo != null) {
                 System.out.printf("%-25s%-20s%-20d\n", equipo.getNombre(), equipo.getCiudad(), equipo.getNumJugadores());
             }
