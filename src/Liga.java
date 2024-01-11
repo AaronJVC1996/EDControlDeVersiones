@@ -1,7 +1,7 @@
 public class Liga {
     private String Pais;
-    public final int numMaxEquipos = 20;
-    public Equipo[] ListadoEquipos;
+    private final int numMaxEquipos = 20;
+    private Equipo[] ListadoEquipos;
 
     public Liga(String pai) {
         Pais = pai;
@@ -32,6 +32,9 @@ public class Liga {
     }
     public String getPais(){
         return Pais;
+    }
+    public int getNumMaxEquipos() {
+        return numMaxEquipos;
     }
     public void añadirEquipo(Equipo equipo){
         for (int i = 0; i < ListadoEquipos.length; i++) {

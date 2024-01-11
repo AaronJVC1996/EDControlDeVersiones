@@ -66,7 +66,7 @@ public class Main {
 
         Equipo nuevoEquipo = new Equipo(nombreEquipo, ciudadEquipo);
         //si la liga no esta llena se creara el equipo, de lo contrario saltara un mensaje de que esta lleno.
-        if (liga.getNumEquipos() < liga.numMaxEquipos) {
+        if (liga.getNumEquipos() < liga.getNumMaxEquipos()) {
             liga.añadirEquipo(nuevoEquipo);
             System.out.println("Equipo " + nombreEquipo + " insertado.");
         } else {
@@ -134,7 +134,7 @@ public class Main {
         System.out.println("**********COMPOSICIÓN DE LA LIGA*************************");
         System.out.printf("%-25s%-20s%-20s\n", "EQUIPO", "CIUDAD", "NUMERO JUGADORES");
         //nos devolvera solamente los equipos que esten y no los nulls obviamente.
-        for (int i = 0; i < liga.ListadoEquipos.length; i++) {
+        for (int i = 0; i < liga.getNumEquipos(); i++) {
             Equipo equipo = liga.ListadoEquipos[i];
             if (equipo != null) {
                 System.out.printf("%-25s%-20s%-20d\n", equipo.getNombre(), equipo.getCiudad(), equipo.getNumJugadores());
