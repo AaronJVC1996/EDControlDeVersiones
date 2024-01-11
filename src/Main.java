@@ -111,7 +111,7 @@ public class Main {
             //si se ha añadido correctamente los requisitos, se añadira el jugador.
             Jugador nuevoJugador = new Jugador(nombreJugador, nacionalidad, edad, posicion);
             //comprobamos si estan lleno de jugadores el equipo
-            if (equipo.getNumJugadores() < equipo.numMaxJugadores) {
+            if (equipo.getNumJugadores() < equipo.getNumMaxJugadores()) {
                 equipo.adquirirJugador(nuevoJugador);
                 System.out.println("Jugador " + nombreJugador + " insertado en " + nombreEquipo);
             } else {
