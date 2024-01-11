@@ -2,7 +2,7 @@ public class Equipo {
     private String Nombre;
     private String Ciudad;
     private final int numMaxJugadores = 22;
-    public Jugador[] ListaJugadores;
+    private Jugador[] ListaJugadores;
 
     public Equipo (String nombr, String ciuda){
         Nombre = nombr;
@@ -50,5 +50,8 @@ public class Equipo {
     }
     public int getNumMaxJugadores(){
         return numMaxJugadores;
+    }
+    public Jugador getListaJugadoresPos(int posicion){
+        return ListaJugadores[posicion];
     }
 }

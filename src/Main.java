@@ -154,7 +154,8 @@ public class Main {
             System.out.println("********* " + equipo.getNombre() + " ****************************");
             System.out.printf("%-15s%-15s%-10s%-10s%-10s\n", "NOMBRE", "POSICIÓN", "EDAD", "NAC", "LESIONADO");
             //recorremos listadejugadores para ver si el jugador existe, si existe se iniciara el siguiente codigo.
-            for (Jugador jugador : equipo.ListaJugadores) {
+            for (int i = 0; i < equipo.getNumMaxJugadores(); i++) {
+                Jugador jugador = equipo.getListaJugadoresPos(i);
                 if (jugador != null) {
                     System.out.printf("%-15s%-15s%-10d%-10s%-10s\n",
                             jugador.getNombre(), jugador.getPosicion(), jugador.getEdad(),
@@ -194,8 +195,8 @@ public class Main {
     }
     private static Jugador buscarJugadorEnEquipo(String nombreJugador, Equipo equipo) {
         //este metodo es un bucle para buscar si existe el jugador o no, acompaña al metodo vender jugador.
-        for (int i = 0; i < equipo.ListaJugadores.length; i++) {
-            Jugador jugador = equipo.ListaJugadores[i];
+        for (int i = 0; i < equipo.getNumJugadores(); i++) {
+            Jugador jugador = equipo.getListaJugadoresPos(i);
             if (jugador != null && jugador.getNombre().equals(nombreJugador)) {
                 return jugador;
             }
