@@ -1,3 +1,4 @@
+// Aaron Jaffet Vasquez Carrera 1B DAM
 public class Jugador {
     private String Nombre;
     private String Nacionalidad;

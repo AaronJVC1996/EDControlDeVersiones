@@ -1,3 +1,4 @@
+// Aaron Jaffet Vasquez Carrera 1B DAM
 public class Equipo {
     private String Nombre;
     private String Ciudad;

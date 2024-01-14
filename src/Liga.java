@@ -1,3 +1,4 @@
+// Aaron Jaffet Vasquez Carrera 1B DAM
 public class Liga {
     private String Pais;
     private final int numMaxEquipos = 20;
