@@ -97,7 +97,7 @@ public class Main {
             //la posicion iniciara en false para que pueda entrar el siguiente codigo.
             while (!posicionValida) {
                 //Cuando no hay posicion seleccionada añadiremos una
-                System.out.println("Indique la posición del jugador (Delantero, Centrocampista, Defensa, Portero):");
+                System.out.println("Indique la posición del jugador (DEL, CTC, DEF, POR):");
                 posicion = scanner.nextLine();
 
                 if (posicionValida(posicion)) {
