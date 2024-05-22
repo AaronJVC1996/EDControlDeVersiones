@@ -201,7 +201,7 @@ public class Main {
     }
     private static void salir() { // Metodo para salir del programa (Mas que nada es un mensaje)
         // Este es el metodo para salir del menu y saltara este texto.
-        System.out.println("Estas saliendo de esta aplicacion, !!Nos Vemos!!");
+        System.out.println("Estas saliendo de esta aplicacion, !!Hasta luego!!");
     }
 }
 

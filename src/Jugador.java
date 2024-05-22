@@ -1,14 +1,14 @@
 // Aaron Jaffet Vasquez Carrera 1B DAM
 public class Jugador {
     private String Nombre;
-    private String Nacionalidad;
+    private String nacionalidad;
     private int Edad;
     private String Posicion;
     private Boolean Lesionado;
 
     public Jugador (String nombr, String Nac, int eda, String posicio){
         Nombre = nombr;
-        Nacionalidad = Nac;
+        nacionalidad = Nac;
         Edad = eda;
         Posicion = posicio;
         Lesionado = false;
@@ -17,7 +17,7 @@ public class Jugador {
         return Nombre;
     }
     public String getNacionalidad(){ // Este es el get de la nacionalidad del jugador
-        return Nacionalidad;
+        return nacionalidad;
     }
     public int getEdad(){ // Este es el get de la edad del jugador
         return Edad;
