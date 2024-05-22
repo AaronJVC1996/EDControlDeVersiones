@@ -68,4 +68,4 @@ public class Equipo {
                                                        // de la misma manera que lo haria con un array
 
 
-// Este es un comentario hecho por Aaron
+//Este es un comentario hecho por Aaron
