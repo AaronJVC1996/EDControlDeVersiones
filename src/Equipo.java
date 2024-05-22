@@ -66,3 +66,6 @@ public class Equipo {
 }                                                      // que me da el for ejemplo for (int i = 0; i......
                                                        // este i puedo meterlo dentro de este metodo y usarlo
                                                        // de la misma manera que lo haria con un array
+
+
+// Este es un comentario hecho por Aaron
