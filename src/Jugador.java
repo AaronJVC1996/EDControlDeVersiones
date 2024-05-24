@@ -1,38 +1,38 @@
 // Aaron Jaffet Vasquez Carrera 1B DAM
 public class Jugador {
-    private String Nombre;
+    private String nombre;
     private String nacionalidad;
-    private int Edad;
-    private String Posicion;
-    private Boolean Lesionado;
+    private int edad;
+    private String posicion;
+    private boolean lesionado;
 
-    public Jugador (String nombr, String Nac, int eda, String posicio){
-        Nombre = nombr;
-        nacionalidad = Nac;
-        Edad = eda;
-        Posicion = posicio;
-        Lesionado = false;
+    public Jugador (String nombr, String nac, int eda, String posicio){
+        nombre = nombr;
+        nacionalidad = nac;
+        edad = eda;
+        posicio = posicio;
+        lesionado = false;
     }
     public String getNombre(){ // Este es el get del nombre del jugador
-        return Nombre;
+        return nombre;
     }
     public String getNacionalidad(){ // Este es el get de la nacionalidad del jugador
         return nacionalidad;
     }
     public int getEdad(){ // Este es el get de la edad del jugador
-        return Edad;
+        return edad;
     }
     public String getPosicion(){ // Este es el get de la posicion del jugador
-        return Posicion;
+        return posicion;
     }
-    public Boolean getLesionado(){ // Este es el get para saber si el jugador esta lesionado o no
-        return Lesionado;
+    public boolean getLesionado(){ // Este es el get para saber si el jugador esta lesionado o no
+        return lesionado;
     }
     public void Lesionarse(){ // Este es el metodo para lesionar al jugador
-        Lesionado = true;
+        lesionado = true;
     }
     public void Recuperarse(){ // Este es el metodo para quitar la lesion al jugador
-        Lesionado = false;
+        lesionado = false;
     }
 }
 

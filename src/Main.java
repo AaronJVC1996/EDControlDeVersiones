@@ -1,8 +1,7 @@
 // Aaron Jaffet Vasquez Carrera 1B DAM
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in); // Scanner para escribir en el menu
@@ -47,8 +46,9 @@ public class Main {
                     salir();
                     break;
 
-                default: // Si presionamos algo distinto a alguna de los anteriores
+                default:
                     System.out.println("Opción no válida. Inténtelo de nuevo.");
+                    // Si presionamos algo distinto a alguna de los anteriores
                     // Saltara esto cuando se inicie un numero que no esta entre estos 6
                     // Si tecleamos letras se saldra de el programa
             }
